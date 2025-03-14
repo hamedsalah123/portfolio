@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطبخ لذيذ</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts لدعم الخط العربي -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8f1e9;
+        }
+        .hero-section {
+            background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-section h1, .hero-section p, .hero-section .btn {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .btn-custom {
+            background-color: #e74c3c;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+        }
+        .btn-custom:hover {
+            background-color: #c0392b;
+        }
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        footer {
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 40px 0;
+        }
+        footer a {
+            color: #f8f1e9;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        .form-section {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .accessibility-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background-color: #27ae60;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">مطبخ لذيذ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">عن الموقع</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#recipes">الوصفات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#chefs">الطهاة</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#add-recipe">إضافة وصفة</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">المدونة</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">اتصل بنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="switchLang()">English</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- الصفحة الرئيسية (Hero) -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1>مطبخ لذيذ</h1>
+            <p>اكتشف أشهى الوصفات من قلب المطبخ إلى مائدتك</p>
+            <a href="#recipes" class="btn btn-custom mx-2">تصفح الوصفات</a>
+            <a href="#add-recipe" class="btn btn-custom">ابحث عن وصفة</a>
+        </div>
+    </section>
+
+    <!-- عن الموقع -->
+    <section id="about" class="container my-5">
+        <h2 class="text-center mb-4">عن الموقع</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>نشارككم شغف الطهي مع وصفات سهلة ومبتكرة من مختلف المطابخ العالمية والعربية.</p>
+                <p><strong>الرؤية:</strong> جعل الطبخ متعة للجميع.</p>
+                <i class="fa-solid fa-image"></i>
+                <i class="fa-solid fa-circle-user"></i>
+            </div>
+            <div class="col-md-6">
+                <img src="./img/BwERRhdGXV32mAdW-generated_image.jpg" class="img-fluid rounded" alt="فريق الطهاة">
+            </div>
+        </div>
+    </section>
+
+    <!-- الوصفات -->
+    <section id="recipes" class="container my-5">
+        <h2 class="text-center mb-4">الوصفات</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="مكرونة">
+                    <div class="card-body">
+                        <h5 class="card-title">مكرونة بالصلصة</h5>
+                        <p class="card-text">وقت التحضير: 30 دقيقة | الصعوبة: متوسط</p>
+                        <a href="#" class="btn btn-primary">عرض التفاصيل</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="كيك">
+                    <div class="card-body">
+                        <h5 class="card-title">كيك الشوكولاتة</h5>
+                        <p class="card-text">وقت التحضير: 45 دقيقة | الصعوبة: سهل</p>
+                        <a href="#" class="btn btn-primary">عرض التفاصيل</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="https://images.unsplash.com/photo-1618449840665-1389e067f76d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="عصير">
+                    <div class="card-body">
+                        <h5 class="card-title">عصير المانجو</h5>
+                        <p class="card-text">وقت التحضير: 10 دقائق | الصعوبة: سهل</p>
+                        <a href="#" class="btn btn-primary">عرض التفاصيل</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الطهاة -->
+    <section id="chefs" class="container my-5">
+        <h2 class="text-center mb-4">الطهاة</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 pt-5">
+                    <img src="G:\project\portfolio\img\ggg.jpg" class="card-img-top" alt="شيف ليلى">
+                    <div class="card-body">
+                        <h5 class="card-title">شيف ليلى</h5>
+                        <p class="card-text">متخصصة في الحلويات</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 pt-5">
+                    <img src="G:\project\portfolio\img\ggg.jpg" class="card-img-top" alt="شيف ليلى">
+                    <div class="card-body">
+                        <h5 class="card-title">شيف ليلى</h5>
+                        <p class="card-text">متخصصة في الحلويات</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 pt-5">
+                    <img src="G:\project\portfolio\img\ggg.jpg" class="card-img-top" alt="شيف ليلى">
+                    <div class="card-body">
+                        <h5 class="card-title">شيف ليلى</h5>
+                        <p class="card-text">متخصصة في الحلويات</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- إضافة وصفة -->
+    <section id="add-recipe" class="container my-5">
+        <h2 class="text-center mb-4">إضافة وصفة</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6 form-section">
+                <form id="recipeForm" onsubmit="submitRecipe(event)">
+                    <div class="mb-3">
+                        <label for="recipeName" class="form-label">اسم الوصفة</label>
+                        <input type="text" class="form-control" id="recipeName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ingredients" class="form-label">المكونات</label>
+                        <textarea class="form-control" id="ingredients" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="steps" class="form-label">الخطوات</label>
+                        <textarea class="form-control" id="steps" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipeImage" class="form-label">صورة الوصفة</label>
+                        <input type="file" class="form-control" id="recipeImage" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn btn-custom w-100">إرسال الوصفة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- المدونة -->
+    <section id="blog" class="container my-5">
+        <h2 class="text-center mb-4">المدونة</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h5>أحدث صيحات الحلويات</h5>
+                
+                <p>تعرفي على أحدث اتجاهات الحلويات لعام 2025.</p>
+                <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=60" class="img-fluid rounded" alt="توابل">
+            </div>
+            <div class="col-md-6">
+                <h5>أحدث صيحات الحلويات</h5>
+                <p>تعرفي على أحدث اتجاهات الحلويات لعام 2025.</p>
+                <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=60" class="img-fluid rounded" alt="حلويات">
+            </div>
+        </div>
+    </section>
+
+    <!-- اتصل بنا -->
+    <section id="contact" class="container my-5">
+        <h2 class="text-center mb-4">اتصل بنا</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019849589744!2d-122.419415684681!3d37.774929779759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064e3b8eabf%3A0x3c2d9b9c3e8e7e8c!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1609459200000" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="col-md-6">
+                <p>البريد: info@ladhidhkitchen.com</p>
+                <p>الهاتف: 1234-5678</p>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">الاسم</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">رسالتك</label>
+                        <textarea class="form-control" id="message" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-custom">إرسال</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- زر الوصولية -->
+    <button class="accessibility-btn" onclick="increaseTextSize()">تكبير النصوص</button>
+
+    <!-- الفوتر الاحترافي -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>مطبخ لذيذ</h5>
+                    <p>اكتشف أشهى الوصفات معنا!</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#recipes">الوصفات</a></li>
+                        <li><a href="#chefs">الطهاة</a></li>
+                        <li><a href="#add-recipe">إضافة وصفة</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>تواصل معنا</h5>
+                    <p>البريد: info@ladhidhkitchen.com</p>
+                    <p>الهاتف: 1234-5678</p>
+                    <p>
+                        <a href="#" class="mx-2">فيسبوك</a>
+                        <a href="#" class="mx-2">تويتر</a>
+                        <a href="#" class="mx-2">إنستغرام</a>
+                    </p>
+                </div>
+            </div>
+            <hr class="bg-white">
+            <p class="text-center">© 2025 مطبخ لذيذ. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        function submitRecipe(event) {
+            event.preventDefault();
+            alert("تم إرسال الوصفة للمراجعة! شكرًا لمساهمتك.");
+            document.getElementById("recipeForm").reset();
+        }
+
+        function switchLang() {
+            if (document.documentElement.lang === "ar") {
+                document.documentElement.lang = "en";
+                document.documentElement.dir = "ltr";
+                document.querySelector(".navbar-brand").textContent = "Ladhidh Kitchen";
+                document.querySelector(".hero-section h1").textContent = "Ladhidh Kitchen";
+                document.querySelector(".hero-section p").textContent = "Discover the tastiest recipes from the kitchen to your table";
+            } else {
+                document.documentElement.lang = "ar";
+                document.documentElement.dir = "rtl";
+                document.querySelector(".navbar-brand").textContent = "مطبخ لذيذ";
+                document.querySelector(".hero-section h1").textContent = "مطبخ لذيذ";
+                document.querySelector(".hero-section p").textContent = "اكتشف أشهى الوصفات من قلب المطبخ إلى مائدتك";
+            }
+        }
+
+        function increaseTextSize() {
+            document.body.style.fontSize = "1.2em";
+        }
+    </script>
+</body>
+</html>
